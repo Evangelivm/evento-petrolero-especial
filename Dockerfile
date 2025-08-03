@@ -26,7 +26,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Enable standalone output in next.config.js
-RUN sed -i 's/\/\/\s*output: "standalone"/output: "standalone"/' next.config.mjs
+RUN sed -i 's/\/\/\s*output: "standalone"/output: "standalone"/' next.config.ts
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
