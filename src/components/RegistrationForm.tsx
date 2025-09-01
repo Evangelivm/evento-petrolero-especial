@@ -43,7 +43,7 @@ const formSchema = z.object({
     .min(1, { message: "El teléfono es requerido" })
     .regex(/^\d+$/, { message: "Solo se permiten números" })
     .min(7, { message: "Mínimo 7 dígitos" })
-    .max(9, { message: "Máximo 9 dígitos" }),
+    .max(15, { message: "Máximo 15 dígitos" }),
   tipo_participante: z.enum([
     "AUSPICIADOR",
     "AUTORIDAD",
@@ -203,12 +203,12 @@ export function RegistrationForm() {
                     <div className="relative">
                       <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
                       <Input
-                        placeholder="987654321"
+                        placeholder="Maximo 15 digitos"
                         {...field}
                         className="pl-10"
                         type="tel"
                         inputMode="numeric"
-                        maxLength={9}
+                        maxLength={15}
                       />
                     </div>
                   </FormControl>
